@@ -32,7 +32,7 @@ export const Checkbox = ({ record, goNext }) => {
         type='button'
         value='Дальше'
         onClick={() =>
-          value && goNext({ question_id: id, answer: value, time_to_answer: Date.now() - start })
+          value && goNext({ question_id: id, answer: value, time_to_answer: Date.now() - start, date_answer: new Date()})
         }
       />
     </div>

@@ -33,6 +33,7 @@ export const Radio = ({ record, goNext }) => {
             question_id: id,
             answer: [answer_options.find((a) => a.id === value)],
             time_to_answer: Date.now() - start,
+            date_answer: new Date()
           })
         }
       />

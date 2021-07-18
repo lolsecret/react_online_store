@@ -19,6 +19,7 @@ export const Text = ({ record, goNext }) => {
             question_id: id,
             answer: [{ id: answer_options[0].id, answer_option: value }],
             time_to_answer: Date.now() - start,
+            date_answer: new Date()
           })
         }
       />
