@@ -4,13 +4,12 @@ import { useHistory } from 'react-router-dom'
 
 import { Card } from '../components/Card'
 
-export const Main = ({ setData }) => {
+export const Main = ({ setData, hardcode }) => {
   const history = useHistory()
 
   const handleBuy = (title) => {
     const hardcoded = {
-      person_id: 4,
-      mobile_phone: '77077887796',
+      ...hardcode,
       product: title,
     }
 

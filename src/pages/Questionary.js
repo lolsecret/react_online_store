@@ -7,7 +7,7 @@ import { Radio } from '../components/Radio'
 import { Select } from '../components/Select'
 import { Text } from '../components/Text'
 
-export const Questionary = ({ data }) => {
+export const Questionary = ({ data, hardcode }) => {
   const { path } = useRouteMatch()
   const history = useHistory()
 
@@ -25,9 +25,10 @@ export const Questionary = ({ data }) => {
   }
 
   const goNext = (answer) => {
+    const _answer = {...answer, ...hardcode}
     const que = data[answers.length + 1]
     setQuestion(que)
-    setAnswers([...answers, answer])
+    setAnswers([...answers, _answer])
     que && history.push(`/questionary/${que.id}`)
     que === undefined && history.push('/questionary/done')
   }
